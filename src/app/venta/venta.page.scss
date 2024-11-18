@@ -1,0 +1,21 @@
+ion-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px; /* Ajusta el ancho máximo de la tarjeta */
+    margin: 0 auto; /* Centra las tarjetas horizontalmente */
+  }
+  
+  .card-img-top {
+    width: 100%; /* La imagen ocupa el ancho total de la tarjeta */
+    height: 300px;  // Ajusta la altura según el diseño deseado
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  ion-card-content, ion-card-header {
+    text-align: center; /* Centra el texto */
+    padding: 10px;
+  }
+  
