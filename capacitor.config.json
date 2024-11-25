@@ -1,0 +1,6 @@
+{
+  "appId": "com.fab.firebase",
+  "appName": "PetStoreFirebase",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

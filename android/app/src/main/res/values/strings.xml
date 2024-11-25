@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PetStoreFirebase</string>
+    <string name="title_activity_main">PetStoreFirebase</string>
+    <string name="package_name">com.fab.firebase</string>
+    <string name="custom_url_scheme">com.fab.firebase</string>
+</resources>
