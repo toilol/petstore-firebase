@@ -1,8 +1,7 @@
-// src/app/models/servicio.model.ts
 export interface Servicio {
-    nombre: string;
-    descripcion: string;
-    precio: number;
-    imagenUrl: string;
-  }
-  
+  id?: string;  // El ? indica que es opcional
+  nombre: string;
+  descripcion: string;
+  precio: number;
+  imagenUrl: string;
+}

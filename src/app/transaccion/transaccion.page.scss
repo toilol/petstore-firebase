@@ -1,0 +1,23 @@
+.transaccion-exitosa, .transaccion-error {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.icono-exito, .icono-error {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+ion-card {
+  max-width: 500px;
+  margin: 1.5rem auto;
+}
+
+.resultado-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -5,13 +5,18 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-  apiKey: "AIzaSyB80FE2hRSYQCEpbdUZFqgZVfzSYQhJf7U",
-  authDomain: "petstore-1bae6.firebaseapp.com",
-  projectId: "petstore-1bae6",
-  storageBucket: "petstore-1bae6.firebasestorage.app",
-  messagingSenderId: "979015061215",
-  appId: "1:979015061215:web:2979ebdbe53b9d5a8b236a",
-  measurementId: "G-PGK0Y013Y3",
+    apiKey: "AIzaSyB80FE2hRSYQCEpbdUZFqgZVfzSYQhJf7U",
+    authDomain: "petstore-1bae6.firebaseapp.com",
+    projectId: "petstore-1bae6",
+    storageBucket: "petstore-1bae6.firebasestorage.app",
+    messagingSenderId: "979015061215",
+    appId: "1:979015061215:web:2979ebdbe53b9d5a8b236a",
+    measurementId: "G-PGK0Y013Y3",
+},
+  transbank: {
+      commerceCode: '597055555532', // Código de comercio de prueba
+      apiKey: '579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C ', // API Key 
+      returnUrl: 'http://localhost:8100/transaccion' // URL para redirección después del pago
   }
 };
 

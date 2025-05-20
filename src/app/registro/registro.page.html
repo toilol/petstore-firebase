@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lol"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <ion-title class="title">Crear Cuenta</ion-title>
+    <p class="subTitle">Regístrate para acceder a todos los servicios</p>
+    
+    <form (ngSubmit)="registrar()">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input [(ngModel)]="email" name="email" type="email" required></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Confirmar Contraseña</ion-label>
+        <ion-input [(ngModel)]="confirmPassword" name="confirmPassword" type="password" required></ion-input>
+      </ion-item>
+      
+      <ion-button expand="block" type="submit" class="ion-margin-top">Registrarse</ion-button>
+      
+      <ion-text color="danger" *ngIf="errorMessage">
+        <p>{{ errorMessage }}</p>
+      </ion-text>
+    </form>
+    
+    <div class="ion-text-center ion-margin-top">
+      <p>¿Ya tienes cuenta? <a style="color: coral;" [routerLink]="['/lol']">Inicia sesión</a></p>
+    </div>
+  </div>
+</ion-content>

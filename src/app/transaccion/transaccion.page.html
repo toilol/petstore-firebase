@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Resultado de Transacción</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/venta"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Estado de carga -->
+  <div *ngIf="cargando" class="ion-text-center ion-padding">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Verificando estado de tu pago...</p>
+  </div>
+
+  <!-- Resultado de transacción -->
+  <div *ngIf="!cargando" class="resultado-container">
+    <!-- Transacción exitosa -->
+    <div *ngIf="estadoTransaccion?.response_code === 0" class="transaccion-exitosa">
+      <div class="icono-exito">
+        <ion-icon name="checkmark-circle" color="success"></ion-icon>
+      </div>
+      <h2 class="ion-text-center">¡Pago Completado!</h2>
+      
+      <ion-card>
+        <ion-card-content>
+          <ion-item lines="none">
+            <ion-label>Estado:</ion-label>
+            <ion-note slot="end" color="success">{{ getEstadoPago() }}</ion-note>
+          </ion-item>
+          
+          <ion-item lines="none">
+            <ion-label>Orden:</ion-label>
+            <ion-note slot="end">{{ estadoTransaccion?.buy_order }}</ion-note>
+          </ion-item>
+          
+          <ion-item lines="none">
+            <ion-label>Monto:</ion-label>
+            <ion-note slot="end">${{ estadoTransaccion?.amount | number }}</ion-note>
+          </ion-item>
+          
+          <ion-item lines="none">
+            <ion-label>Fecha:</ion-label>
+            <ion-note slot="end">{{ estadoTransaccion?.transaction_date | date:'medium' }}</ion-note>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-button expand="block" routerLink="/venta" class="ion-margin-top">
+        Volver a Servicios
+      </ion-button>
+    </div>
+
+    <!-- Error en transacción -->
+    <div *ngIf="error || estadoTransaccion?.response_code !== 0" class="transaccion-error">
+      <div class="icono-error">
+        <ion-icon name="close-circle" color="danger"></ion-icon>
+      </div>
+      <h2 class="ion-text-center">Error en el Pago</h2>
+      <p class="ion-text-center">Ocurrió un problema al procesar tu transacción.</p>
+      
+      <ion-button expand="block" routerLink="/venta" color="danger" class="ion-margin-top">
+        Volver a Intentar
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
